@@ -9,10 +9,10 @@ def echo_response(message):
                     text=message["text"]).send()
     
 def bc_response(message):
-  if message["type"] == "bitcoin" :
+  if message["type"] == "message" :
     now = datetime.now()
     res = requests.get("https://api.korbit-test.com/v1/ticker?currency_pair=btc_krw")
     rej = res.json()
     rep = datetime.now() + 'now' + rej['last'] + 'BTC/KRW.'
-    ReplyToActivity(fill=rep,
+    ReplyToActivity(fill=message,
                     text=rep["text"]).send()
