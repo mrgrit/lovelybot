@@ -15,4 +15,4 @@ def bc_response(message):
     rej = res.json()
     rep = datetime.now() + 'now' + rej['last'] + 'BTC/KRW.'
     ReplyToActivity(fill=message,
-                    text=rep["text"]).send()
+                    text=message["text"]).send()
