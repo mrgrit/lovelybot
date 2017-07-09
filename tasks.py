@@ -14,7 +14,7 @@ def echo_response(message):
         now = datetime.now()
         res = requests.get("https://api.korbit-test.com/v1/ticker?currency_pair=btc_krw")
         rej = res.json()
-        rep = datetime.now() + 'now' + rej['last'] + 'BTC/KRW.'
+        rep = str(datetime.now()) + 'now' + rej['last'] + 'BTC/KRW.'
         ReplyToActivity(fill=message,
                         text=rep).send()
     else :
