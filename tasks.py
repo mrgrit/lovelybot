@@ -3,12 +3,12 @@ import json
 import requests
 from datetime import datetime
 
-def echo_response(message):
-  if message["type"] == "message":
-    ReplyToActivity(fill=message,
-                    text=message["text"]).send()
+#def echo_response(message):
+#  if message["type"] == "message":
+#    ReplyToActivity(fill=message,
+#                    text=message["text"]).send()
     
-def bc_response(message):  
+def echo_response(message):  
   if message["type"] == "message" :
     if "bitcoin" in message["text"]:
         now = datetime.now()
