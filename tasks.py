@@ -17,3 +17,6 @@ def echo_response(message):
         rep = datetime.now() + 'now' + rej['last'] + 'BTC/KRW.'
         ReplyToActivity(fill=message,
                         text=rep).send()
+    else :
+        ReplyToActivity(fill=message,
+                        text=message["text"]).send()
